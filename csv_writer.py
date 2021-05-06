@@ -20,9 +20,9 @@ def write_to_csv(data):
     with open('main.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(data[0])
-        for i in range(len(data[1:][0])):
-            row = [el[i] for el in data[1:]]
-            writer.writerow(row)
+        for el in data[1]:
+            writer.writerow(el)
+
 
 
 if __name__ == '__main__':
@@ -41,6 +41,6 @@ if __name__ == '__main__':
         os_code_list.append(parse(data, patterns[2]))
         os_type_list.append(parse(data, patterns[3]))
 
-    main_list = [patterns, os_prod_list, os_name_list, os_code_list, os_type_list]
+    main_list = [patterns, zip(os_prod_list, os_name_list, os_code_list, os_type_list)]
     write_to_csv(main_list)
 
