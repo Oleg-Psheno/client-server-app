@@ -1,0 +1,11 @@
+{
+    "orders": [
+        {
+            "item": "phone",
+            "quantity": 2,
+            "price": 10000,
+            "buyer": "id_buyer",
+            "date": "22.01.2020"
+        }
+    ]
+}
