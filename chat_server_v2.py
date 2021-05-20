@@ -20,10 +20,10 @@ def receive_data(server: socket):
         print(f'Принят запрос от {addr}')
         while True:
             message = client.recv(1024).decode('utf-8')
-            response = handle_data(message)
             if message == 'q':
                 print(f'Соединение с клиентом {addr} закрыто')
                 break
+            response = handle_data(message)
             print(f'Сообщение от клиента: {message}')
             client.send(response.encode('utf-8'))
 
