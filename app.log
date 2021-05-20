@@ -1,0 +1,5 @@
+2021-05-21 00:13:41,638 ERROR      chat_server_v2 : Error - [Errno 48] Address already in use
+2021-05-21 00:17:25,475 ERROR      chat_client_v2 : [Errno 61] Connection refused
+2021-05-21 00:28:35,066 ERROR      chat_server_v2 : Error - [Errno 48] Address already in use
+2021-05-21 00:33:44,138 ERROR      chat_server_v2 : Error - [Errno 48] Address already in use
+2021-05-21 00:34:59,103 ERROR      chat_server_v2 : Error - [Errno 48] Address already in use
