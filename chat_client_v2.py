@@ -16,7 +16,7 @@ def send_message(data: dict, client: socket) -> None:
 
 def get_presence_message(account_name):
     return {'action': 'presence',
-            'time': str(datetime.now()),
+            'time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'type': 'status',
             'user': {'account_name': account_name,
                      'status': 'Enable'}
