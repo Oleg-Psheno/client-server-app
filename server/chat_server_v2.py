@@ -1,13 +1,14 @@
 from socket import socket, AF_INET, SOCK_STREAM
 import json
 from log.log_config import logger as log
+from log.log_config import log_decor
 
 callbacks = {'presence': lambda data: presence(data),
              'msg': lambda data: msg(data),
              'close': lambda data: close(data)
              }
 
-
+@log_decor
 def create_server(ip: str, port: int) -> socket:
     try:
         server = socket(AF_INET, SOCK_STREAM)
@@ -36,7 +37,7 @@ def receive_data(server: socket):
             log.info(f'Сообщение от клиента: {message}')
             client.send(response.encode('utf-8'))
 
-
+@log_decor
 def handle_data(message: str) -> str:
     data = json.loads(message)
     response = callbacks[data["action"]](data)
@@ -61,5 +62,5 @@ def close(data):
 
 
 if __name__ == '__main__':
-    server = create_server('', 8885)
+    server = create_server('', 8886)
     receive_data(server)
