@@ -75,7 +75,7 @@ def get_presence():
 if __name__ == '__main__':
     addr = ('', 8887)
     s = get_socket(addr)
-    name = 'Pit'
+    name = 'Li'
     print(f'Тебя зовут {name}')
     s.send(get_presence())
     receive = threading.Thread(target=main_loop)
